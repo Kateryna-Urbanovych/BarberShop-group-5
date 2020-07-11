@@ -157,7 +157,9 @@
   border-radius: 50%;
 }
 
-.master-seti.link:hover,
-.master-seti.link:focus {
+.master-seti.link:hover .icon-seti,
+.master-seti.link:focus .icon-seti {
   fill: $accept-color;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
