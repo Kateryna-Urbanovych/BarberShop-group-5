@@ -193,6 +193,57 @@ module.hot.accept(reloadCSS);
 "use strict";
 
 require("./sass/main.scss");
+
+/* Индекс слайда по умолчанию */
+var slideIndex = 1;
+showSlides(slideIndex);
+/* Функция увеличивает индекс на 1, показывает следующй слайд*/
+
+function plusSlide() {
+  showSlides(slideIndex += 1);
+}
+/* Функция уменьшяет индекс на 1, показывает предыдущий слайд*/
+
+
+function minusSlide() {
+  showSlides(slideIndex -= 1);
+}
+/* Устанавливает текущий слайд */
+
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+/* Основная функция слайдера */
+
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName('slider-item');
+  var dots = document.getElementsByClassName('slider-dots_item');
+
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';
+  }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(' active', '');
+  }
+
+  slides[slideIndex - 1].style.display = 'block';
+  dots[slideIndex - 1].className += ' active';
+}
+
+document.querySelector('.button-slayder .prev').addEventListener('click', minusSlide);
+document.querySelector('.button-slayder .next').addEventListener('click', plusSlide);
 },{"./sass/main.scss":"sass/main.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -221,7 +272,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54020" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61253" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
