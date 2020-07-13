@@ -117,83 +117,61 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"slider.js":[function(require,module,exports) {
+/* Индекс слайда по умолчанию */
+var slideIndex = 1;
+showSlides(slideIndex);
+/* Функция увеличивает индекс на 1, показывает следующй слайд*/
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
+function plusSlide() {
+  showSlides(slideIndex += 1);
+}
+/* Функция уменьшяет индекс на 1, показывает предыдущий слайд*/
+
+
+function minusSlide() {
+  showSlides(slideIndex -= 1);
+}
+/* Устанавливает текущий слайд */
+
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+/* Основная функция слайдера */
+
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName('slider-item');
+  var dots = document.getElementsByClassName('slider-dots_item');
+
+  if (n > slides.length) {
+    slideIndex = 1;
   }
 
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
+  if (n < 1) {
+    slideIndex = slides.length;
   }
 
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';
   }
 
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(' active', '');
+  }
 
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
+  slides[slideIndex - 1].style.display = 'block';
+  dots[slideIndex - 1].className += ' active';
 }
 
-module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"sass/main.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./..\\images\\slider-img-3-480.jpg":[["slider-img-3-480.7d3a42a1.jpg","images/slider-img-3-480.jpg"],"images/slider-img-3-480.jpg"],"./..\\images\\slider-img-3@2x-480.jpg":[["slider-img-3@2x-480.01f92ac5.jpg","images/slider-img-3@2x-480.jpg"],"images/slider-img-3@2x-480.jpg"],"./..\\images\\price-mobile.png":[["price-mobile.e35cd7c7.png","images/price-mobile.png"],"images/price-mobile.png"],"./..\\images\\price-mobile@2x.png":[["price-mobile@2x.6ab5179e.png","images/price-mobile@2x.png"],"images/price-mobile@2x.png"],"./..\\images\\price-tablet.png":[["price-tablet.0683cb44.png","images/price-tablet.png"],"images/price-tablet.png"],"./..\\images\\price-tablet@2x.png":[["price-tablet@2x.5fe3f9fe.png","images/price-tablet@2x.png"],"images/price-tablet@2x.png"],"./..\\images\\price-desktop.png":[["price-desktop.8ec380a6.png","images/price-desktop.png"],"images/price-desktop.png"],"./..\\images\\price-desktop@2x.png":[["price-desktop@2x.544a22d2.png","images/price-desktop@2x.png"],"images/price-desktop@2x.png"],"./..\\images\\plus.svg":[["plus.500a6d38.svg","images/plus.svg"],"images/plus.svg"],"./..\\images\\bg-contacts-mobi.jpg":[["bg-contacts-mobi.b6570582.jpg","images/bg-contacts-mobi.jpg"],"images/bg-contacts-mobi.jpg"],"./..\\images\\bg-contacts-tablet.jpg":[["bg-contacts-tablet.6a8c5c61.jpg","images/bg-contacts-tablet.jpg"],"images/bg-contacts-tablet.jpg"],"./..\\images\\bg-contacts-desktop.jpg":[["bg-contacts-desktop.43c811ed.jpg","images/bg-contacts-desktop.jpg"],"images/bg-contacts-desktop.jpg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
-"use strict";
-
-require("./sass/main.scss");
-},{"./sass/main.scss":"sass/main.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+document.querySelector('.button-slayder .prev').addEventListener('click', minusSlide);
+document.querySelector('.button-slayder .next').addEventListener('click', plusSlide);
+document.querySelector('.item-1').addEventListener('click', currentSlide(1));
+document.querySelector('.item-2').addEventListener('click', currentSlide(2));
+document.querySelector('.item-3').addEventListener('click', currentSlide(3));
+},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -397,5 +375,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/src.e31bb0bc.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","slider.js"], null)
+//# sourceMappingURL=/slider.ab09d017.js.map
