@@ -87,6 +87,7 @@
   }
 }
 .onlineform > .dataclient {
+  margin-bottom: 44px;
   @media screen and (min-width: 768px) {
     display: flex;
     justify-content: space-between;
@@ -113,8 +114,15 @@
 .onlineform-field {
   position: relative;
   display: block;
-  margin-bottom: 40px;
 
+  &:nth-child(2n-1) {
+    margin-bottom: 44px;
+  }
+  @media screen and (min-width: 768px) {
+    &:first-child {
+      margin-bottom: 0px;
+    }
+  }
   // &.nametel {
   //   @media screen and (min-width: 768px) {
   //     display: inline-block;
@@ -210,6 +218,19 @@
     text-align: start;
   }
 }
+.location-adds {
+  margin-bottom: 44px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 70px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin-right: 90px;
+  }
+}
+
 .location-list {
   @extend %list;
   font-style: normal;
@@ -219,18 +240,6 @@
   letter-spacing: 0.02em;
 
   color: $primery-dark-color;
-
-  margin-bottom: 44px;
-  @media screen and (min-width: 768px) {
-    margin-bottom: 0px;
-  }
-  @media screen and (min-width: 1200px) {
-    margin-bottom: 70px;
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
-    margin-right: 90px;
-  }
 
   .item {
     display: flex;
