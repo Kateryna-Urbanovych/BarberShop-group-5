@@ -33,7 +33,7 @@
     padding-top: 32px;
   }
 
-  @media screen and (min-width: $tablet) and (max-width: 1199px) {
+  @media screen and (min-width: $tablet) and (max-width: 1279px) {
     padding-left: 50px;
   }
 
@@ -84,6 +84,10 @@
   fill: currentColor;
   cursor: pointer;
 
+  &:hover {
+    fill: $accept-color;
+  }
+
   @media screen and (min-width: $tablet) {
     display: none;
   }
@@ -113,20 +117,12 @@
     height: 100%;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.5);
-    transition: opacity 250 ease-in-out;
-    overflow-y: scroll;
 
     &.is-open {
       display: block;
+      overflow-y: scroll;
     }
   }
-
-  // &.is-open .menu {
-  //   transform: translate(0%, 0%) scale(1.1);
-  //   @media screen and (min-width: $mobile) {
-  //     transform: translate(-50%, -50%) scale(1.1);
-  //   }
-  // }
 }
 
 .menu {
@@ -149,6 +145,18 @@
     background-color: $white-color;
     box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.16),
       -2px 0px 4px rgba(0, 0, 0, 0.08), -4px 0px 8px rgba(0, 0, 0, 0.04);
+
+    @media screen and (min-width: 520px) and (max-width: 599px) {
+      right: 4%;
+    }
+
+    @media screen and (min-width: 600px) and (max-width: 679px) {
+      right: 10%;
+    }
+
+    @media screen and (min-width: 680px) and (max-width: 767px) {
+      right: 14%;
+    }
   }
 
   @media screen and (min-width: $tablet) {
@@ -180,7 +188,7 @@
     display: flex;
   }
 
-  @media screen and (min-width: $tablet) and (max-width: 1199px) {
+  @media screen and (min-width: $tablet) and (max-width: 1279px) {
     margin-right: 47px;
   }
 }
@@ -192,6 +200,9 @@
     }
     @media screen and (min-width: $tablet) {
       margin-right: 24px;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-right: 40px;
     }
   }
 
@@ -215,7 +226,7 @@
     margin-bottom: 64px;
   }
 
-  @media screen and (min-width: $tablet) and (max-width: 1199px) {
+  @media screen and (min-width: $tablet) and (max-width: 1279px) {
     flex-direction: column;
     text-align: center;
   }
@@ -228,7 +239,7 @@
 
 .contacts__item {
   &:not(:last-child) {
-    @media screen and (min-width: $tablet) and (max-width: 1199px) {
+    @media screen and (min-width: $tablet) and (max-width: 1279px) {
       margin-bottom: 20px;
     }
   }
