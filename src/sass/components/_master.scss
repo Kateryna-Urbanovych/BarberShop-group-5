@@ -1,5 +1,4 @@
 .master.section {
-  max-width: 1280px;
   padding-top: 84px;
   padding-bottom: 84px;
   margin-left: auto;
@@ -7,14 +6,14 @@
   background-color: $section-bgc;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $tablet) {
   .master.section {
     padding-top: 100px;
     padding-bottom: 100px;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: $desktop) {
   .master.section {
     padding-top: 130px;
     padding-bottom: 130px;
@@ -28,7 +27,7 @@
   margin-right: auto;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $tablet) {
   .master.container {
     padding-left: 159px;
     padding-right: 159px;
@@ -86,6 +85,10 @@
   padding-left: 0;
 }
 
+.master-foto {
+  margin-bottom: 30px;
+}
+
 @media screen and (min-width: 480px) {
   .master-foto {
     margin-left: auto;
@@ -107,13 +110,13 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $tablet) {
   .master-name:not(:last-child) {
     margin-bottom: 64px;
   }
 }
 .master-title.name {
-  margin-top: 30px;
+  margin-top: 0;
   margin-bottom: 8px;
   font-size: 18px;
   line-height: 1.4;
