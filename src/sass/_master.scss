@@ -6,14 +6,14 @@
   background-color: $section-bgc;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $tablet) {
   .master.section {
     padding-top: 100px;
     padding-bottom: 100px;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: $desktop) {
   .master.section {
     padding-top: 130px;
     padding-bottom: 130px;
@@ -27,14 +27,14 @@
   margin-right: auto;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $tablet) {
   .master.container {
     padding-left: 159px;
     padding-right: 159px;
   }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: $desktop) {
   .master.container {
     padding-left: 15px;
     padding-right: 15px;
@@ -110,7 +110,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $tablet) {
   .master-name:not(:last-child) {
     margin-bottom: 64px;
   }
