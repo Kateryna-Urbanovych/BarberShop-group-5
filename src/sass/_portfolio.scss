@@ -48,7 +48,7 @@
 
   font-weight: 600;
   font-size: 11px;
-  line-height: 1.9;
+  line-height: 1.36;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -72,6 +72,8 @@
 
 .portfolio-ul {
   padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 @media screen and (min-width: 481px) {

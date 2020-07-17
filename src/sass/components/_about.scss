@@ -107,6 +107,7 @@
 }
 
 .about.title {
+  font-family: $title-font;
   margin-bottom: 20px;
   margin-top: 0;
 
@@ -126,12 +127,14 @@
 }
 
 .about-first.text {
+  margin-top: 0;
   margin-bottom: 20px;
 
   font-weight: normal;
   font-size: 16px;
   line-height: 1.6;
   letter-spacing: 0.02em;
+  color: $secondary-color;
 }
 
 @media screen and (min-width: 1200px) {
@@ -142,20 +145,22 @@
 }
 
 .about-second.text {
+  margin-top: 0;
   margin-bottom: 40px;
   font-size: 14px;
   line-height: 1.8;
   letter-spacing: 0.02em;
+  color: $secondary-color;
 }
 
 .about-button {
+  padding: 12px 20px;
   font-weight: 600;
   font-size: 12px;
-  line-height: 16px;
+  line-height: 1.33;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  width: 160px;
-  height: 40px;
+  color: $primery-color;
   background-color: #fff;
   border: 1px solid #ff6c00;
   border-radius: 25px;

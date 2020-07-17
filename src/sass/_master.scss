@@ -1,5 +1,4 @@
 .master.section {
-  max-width: 1280px;
   padding-top: 84px;
   padding-bottom: 84px;
   margin-left: auto;
@@ -86,6 +85,10 @@
   padding-left: 0;
 }
 
+.master-foto {
+  margin-bottom: 30px;
+}
+
 @media screen and (min-width: 480px) {
   .master-foto {
     margin-left: auto;
@@ -113,10 +116,10 @@
   }
 }
 .master-title.name {
-  margin-top: 30px;
+  margin-top: 0;
   margin-bottom: 8px;
   font-size: 18px;
-  line-height: 1.4;
+  line-height: 1.37;
   font-weight: 400;
   text-align: center;
   letter-spacing: 0.02em;
