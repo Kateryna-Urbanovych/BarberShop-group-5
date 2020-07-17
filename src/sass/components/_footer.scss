@@ -26,7 +26,7 @@
       background-image: url('../images/bg-contacts-tablet@2x.png');
     }
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     background-position: 51vw;
     // max-width: 1280px;
     background-size: 625px 644px;
@@ -42,9 +42,9 @@
 }
 
 .container.footer {
-  @media screen and (min-width: 1200px) {
-    background-position: right 40vw;
-    max-width: 1280px;
+  @media screen and (min-width: 1280px) {
+    // background-position: right 40vw;
+    // max-width: 1280px;
     display: flex;
   }
 }
@@ -57,7 +57,7 @@
     text-align: start;
     margin-bottom: 200px;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     width: 560px;
     margin-bottom: 0;
     margin-right: 140px;
@@ -82,11 +82,12 @@
   // }
 }
 .location-container {
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
     display: flex;
   }
 }
 .onlineform > .dataclient {
+  margin-bottom: 44px;
   @media screen and (min-width: 768px) {
     display: flex;
     justify-content: space-between;
@@ -96,7 +97,7 @@
       display: inline-flex;
       width: 330px;
     }
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1280px) {
       width: 270px;
     }
   }
@@ -105,7 +106,7 @@
       display: inline-flex;
       width: 330px;
     }
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1280px) {
       width: 260px;
     }
   }
@@ -113,8 +114,15 @@
 .onlineform-field {
   position: relative;
   display: block;
-  margin-bottom: 40px;
 
+  &:nth-child(2n-1) {
+    margin-bottom: 44px;
+  }
+  @media screen and (min-width: 768px) {
+    &:first-child {
+      margin-bottom: 0px;
+    }
+  }
   // &.nametel {
   //   @media screen and (min-width: 768px) {
   //     display: inline-block;
@@ -180,8 +188,7 @@
 }
 
 .onlineform-submit {
-  width: 160px;
-  height: 40px;
+  padding: 12px 38px;
 
   font-family: inherit;
   font-weight: 600;
@@ -210,6 +217,19 @@
     text-align: start;
   }
 }
+.location-adds {
+  margin-bottom: 44px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 70px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    margin-right: 90px;
+  }
+}
+
 .location-list {
   @extend %list;
   font-style: normal;
@@ -219,18 +239,6 @@
   letter-spacing: 0.02em;
 
   color: $primery-dark-color;
-
-  margin-bottom: 44px;
-  @media screen and (min-width: 768px) {
-    margin-bottom: 0px;
-  }
-  @media screen and (min-width: 1200px) {
-    margin-bottom: 70px;
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
-    margin-right: 90px;
-  }
 
   .item {
     display: flex;
@@ -320,7 +328,7 @@
   @media screen and (min-width: 768px) {
     // max-width: 768px;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     // max-width: 1280px;
   }
 }
