@@ -26,7 +26,7 @@
       background-image: url('../images/bg-contacts-tablet@2x.png');
     }
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     background-position: 51vw;
     // max-width: 1280px;
     background-size: 625px 644px;
@@ -42,9 +42,9 @@
 }
 
 .container.footer {
-  @media screen and (min-width: 1200px) {
-    background-position: right 40vw;
-    max-width: 1280px;
+  @media screen and (min-width: 1280px) {
+    // background-position: right 40vw;
+    // max-width: 1280px;
     display: flex;
   }
 }
@@ -57,7 +57,7 @@
     text-align: start;
     margin-bottom: 200px;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     width: 560px;
     margin-bottom: 0;
     margin-right: 140px;
@@ -82,7 +82,7 @@
   // }
 }
 .location-container {
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
     display: flex;
   }
 }
@@ -97,7 +97,7 @@
       display: inline-flex;
       width: 330px;
     }
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1280px) {
       width: 270px;
     }
   }
@@ -106,7 +106,7 @@
       display: inline-flex;
       width: 330px;
     }
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1280px) {
       width: 260px;
     }
   }
@@ -222,10 +222,10 @@
   @media screen and (min-width: 768px) {
     margin-bottom: 0px;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     margin-bottom: 70px;
   }
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
     margin-right: 90px;
   }
 }
@@ -328,7 +328,7 @@
   @media screen and (min-width: 768px) {
     // max-width: 768px;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     // max-width: 1280px;
   }
 }
