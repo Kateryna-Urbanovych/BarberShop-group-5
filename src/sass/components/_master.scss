@@ -85,6 +85,10 @@
   padding-left: 0;
 }
 
+.master-foto {
+  margin-bottom: 30px;
+}
+
 @media screen and (min-width: 480px) {
   .master-foto {
     margin-left: auto;
@@ -112,7 +116,7 @@
   }
 }
 .master-title.name {
-  margin-top: 30px;
+  margin-top: 0;
   margin-bottom: 8px;
   font-size: 18px;
   line-height: 1.4;
