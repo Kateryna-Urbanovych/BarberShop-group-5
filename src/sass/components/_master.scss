@@ -78,6 +78,11 @@
   color: $primery-color;
 }
 
+.master-foto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .master-ul {
   list-style: none;
   margin-top: 0;
@@ -85,18 +90,19 @@
   padding-left: 0;
 }
 
-.master-foto {
-  margin-bottom: 30px;
-}
-
-@media screen and (min-width: 769px) {
+@media screen and (min-width: $desktop) {
   .master-ul {
     display: flex;
     margin: -15px;
   }
 }
 
-@media screen and (min-width: 769px) {
+.master-name {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: $desktop) {
   .master-name {
     width: calc((100% - 6 * 15px) / 3);
     margin: 15px;
@@ -108,6 +114,11 @@
     margin-bottom: 64px;
   }
 }
+
+.master-content {
+  padding-top: 30px;
+}
+
 .master-title.name {
   margin-top: 0;
   margin-bottom: 8px;
